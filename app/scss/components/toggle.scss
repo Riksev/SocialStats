@@ -1,0 +1,64 @@
+@use "../util" as *;
+
+.toggle {
+  display: grid;
+  grid-template-columns: 1fr rem(48);
+  border: none;
+  margin: 0;
+
+  label {
+    color: var(--toggle);
+    line-height: rem(24);
+    margin-right: rem(13);
+  }
+
+  &__wrapper {
+    position: relative;
+    grid-column: 2 / 3;
+    height: rem(24);
+  }
+
+  input[type="radio"] {
+    opacity: 0;
+    margin: 0 rem(-2) 0 rem(-2);
+    cursor: pointer;
+    width: rem(24);
+    height: rem(24);
+  }
+
+  &__background {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    border-radius: rem(12);
+    background: var(--toggle-bg);
+    pointer-events: none;
+  }
+
+  &__button {
+    position: absolute;
+    left: rem(3);
+    top: rem(3);
+    width: rem(18);
+    height: rem(18);
+    border-radius: 50%;
+    background-color: var(--toggle-button);
+    transition: all 150ms ease-in-out;
+    pointer-events: none;
+
+    #light:checked ~ & {
+      left: calc(100% - rem(21));
+    }
+
+    #system:checked ~ & {
+      left: 50%;
+      transform: translate(-50%);
+    }
+
+    input[type="radio"]:focus ~ & {
+      border: rem(2) solid var(--text-color);
+    }
+  }
+}

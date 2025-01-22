@@ -1,0 +1,71 @@
+@use "../util" as *;
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.1;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: rem(24);
+  margin-bottom: rem(3);
+  @include breakpoint("large") {
+    font-size: rem(28);
+  }
+}
+
+h2 {
+  font-size: rem(24);
+  font-weight: 700;
+  margin-bottom: rem(24);
+}
+
+label {
+  font-size: rem(14);
+  font-weight: 700;
+}
+
+.card {
+  &__username {
+    font-size: rem(12);
+    font-weight: 700;
+  }
+
+  &__count {
+    font-weight: 700;
+    letter-spacing: rem(-2);
+    line-height: 1;
+
+    &--big {
+      font-size: rem(56);
+    }
+
+    &--small {
+      font-size: rem(32);
+    }
+  }
+
+  &__label {
+    font-size: rem(12);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: rem(2.5);
+  }
+
+  &__change {
+    font-size: rem(12);
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    font-size: rem(14);
+    font-weight: 700;
+  }
+}
